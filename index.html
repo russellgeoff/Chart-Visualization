@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Chart Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="angular-chart.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+	<script src="angular-chart.js"></script>
+	<!-- <script src="script.js"></script> -->
+	<script src="app.js"></script>
+</head>
+<body ng-controller="myController">
+	<div style="width:75%">
+		<div>
+			<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="false" series="series" click="onClick" options="options"></canvas>
+		</div>
+	</div>
+	<button ng-click="buttonClick()">{{button.title}}</button>
+</body>
+</html>
