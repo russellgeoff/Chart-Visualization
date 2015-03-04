@@ -2,15 +2,27 @@
 <html ng-app="myApp">
 <head>
 	<title>Chart Test</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Style Sheets -->
 	<link rel="stylesheet" href="angular-chart.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
 	<script src="angular-chart.js"></script>
-	<!-- <script src="script.js"></script> -->
 	<script src="app.js"></script>
 </head>
 <body ng-controller="myController">
+	<div class="row">
+	    <div class="col-md-6">
+	        <p class="input-group">
+	          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+	          <span class="input-group-btn">
+	            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	          </span>
+	        </p>
+	    </div>
+	</div>
 	<div style="width:75%">
 		<div>
 			<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="false" series="series" click="onClick" options="options"></canvas>
